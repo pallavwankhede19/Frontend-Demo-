@@ -1,4 +1,5 @@
 import type { ReactNode } from "react";
+import { Reveal } from "@/components/motion/Reveal";
 import { cn } from "@/lib/utils";
 
 interface SectionHeadingProps {
@@ -21,7 +22,7 @@ export function SectionHeading({
   className,
 }: SectionHeadingProps) {
   return (
-    <div className={cn("x-head", className)}>
+    <Reveal className={cn("x-head", className)}>
       <div>
         <Tag className="x-title" id={id}>
           {title}
@@ -29,6 +30,6 @@ export function SectionHeading({
         {intro ? <p className="x-intro">{intro}</p> : null}
       </div>
       {action}
-    </div>
+    </Reveal>
   );
 }

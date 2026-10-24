@@ -10,7 +10,7 @@ interface CareersBannerProps {
   id?: string;
 }
 
-/** Full-width photo band with a flat navy overlay. */
+/** Full-width photo band with the copy on a dark glass panel. */
 export function CareersBanner({
   title = "Build what matters. Grow with us.",
   text = "Engineering roles and internships across AI, software, IoT and cloud.",
@@ -23,16 +23,18 @@ export function CareersBanner({
     <section className="x-photoband x-dark" id={id} aria-labelledby={`${id}-title`}>
       <Image src={image} alt="" fill sizes="100vw" />
       <div className="x-wrap">
-        <h2 id={`${id}-title`}>{title}</h2>
-        <p>{text}</p>
-        <ButtonGroup>
-          <Button variant="white" href={primary.href} arrow>
-            {primary.label}
-          </Button>
-          <Button variant="ghost" href={secondary.href}>
-            {secondary.label}
-          </Button>
-        </ButtonGroup>
+        <div className="x-panel x-glass">
+          <h2 id={`${id}-title`}>{title}</h2>
+          <p>{text}</p>
+          <ButtonGroup>
+            <Button variant="white" href={primary.href} arrow>
+              {primary.label}
+            </Button>
+            <Button variant="ghost" href={secondary.href}>
+              {secondary.label}
+            </Button>
+          </ButtonGroup>
+        </div>
       </div>
     </section>
   );

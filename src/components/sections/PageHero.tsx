@@ -14,7 +14,7 @@ interface PageHeroProps {
   children?: ReactNode;
 }
 
-/** Navy inner-page hero with breadcrumbs; optional photo under a flat navy overlay. */
+/** Navy inner-page hero with breadcrumbs. With a photo, the copy sits on a dark glass panel. */
 export function PageHero({
   title,
   kicker,
@@ -32,7 +32,7 @@ export function PageHero({
       {image ? <Image src={image} alt={imageAlt} fill priority sizes="100vw" /> : null}
       <div className="x-wrap">
         <Breadcrumbs items={breadcrumbs} />
-        <div className="x-pagehero__copy">
+        <div className={cn("x-pagehero__copy", image && "x-glass")}>
           {kicker ? <p className="x-kicker">{kicker}</p> : null}
           <h1 id="page-title">{title}</h1>
           {subtitle ? <p className="x-pagehero__sub">{subtitle}</p> : null}

@@ -93,7 +93,10 @@ interface TextLinkProps {
 export function TextLink({ href, children, className }: TextLinkProps) {
   return (
     <Link className={cn("x-link", className)} href={href}>
-      {children}&nbsp;→
+      {children}&nbsp;
+      <span className="x-arr" aria-hidden="true">
+        →
+      </span>
     </Link>
   );
 }

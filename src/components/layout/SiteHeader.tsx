@@ -10,7 +10,7 @@ import { mainNavigation } from "@/content/navigation";
 import { siteConfig } from "@/content/site-config";
 import { cn } from "@/lib/utils";
 
-/** Sticky white header with logo, mega menu, primary CTA and the mobile hamburger menu. */
+/** Header with logo, mega menu, primary CTA and the mobile hamburger menu. */
 export function SiteHeader() {
   const [mobileOpen, setMobileOpen] = useState(false);
   const burgerRef = useRef<HTMLButtonElement>(null);

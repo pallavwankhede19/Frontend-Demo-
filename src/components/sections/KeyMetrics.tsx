@@ -1,3 +1,4 @@
+import { CountUp } from "@/components/motion/CountUp";
 import type { Metric } from "@/types";
 
 interface KeyMetricsProps {
@@ -5,7 +6,7 @@ interface KeyMetricsProps {
   note?: string;
 }
 
-/** Row of large headline figures separated by thin rules. */
+/** Frosted strip of headline figures that overlaps the foot of the home hero. */
 export function KeyMetrics({ metrics, note }: KeyMetricsProps) {
   return (
     <section className="x-nums" aria-label="Key numbers">
@@ -13,7 +14,9 @@ export function KeyMetrics({ metrics, note }: KeyMetricsProps) {
         <ul>
           {metrics.map((m) => (
             <li key={m.label}>
-              <b>{m.value}</b>
+              <b>
+                <CountUp value={m.value} />
+              </b>
               <span>{m.label}</span>
             </li>
           ))}

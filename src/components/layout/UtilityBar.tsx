@@ -11,7 +11,7 @@ interface UtilityBarProps {
   searchIndex: SearchEntry[];
 }
 
-/** Navy utility bar with secondary links and the site search panel. */
+/** Utility bar with secondary links and the site search panel. */
 export function UtilityBar({ searchIndex }: UtilityBarProps) {
   const [open, setOpen] = useState(false);
   const [message, setMessage] = useState("");
@@ -102,7 +102,7 @@ export function UtilityBar({ searchIndex }: UtilityBarProps) {
             autoComplete="off"
             placeholder="Search services, industries, insights"
           />
-          <button className="x-btn x-btn--white" type="submit">
+          <button className="x-btn x-btn--primary" type="submit">
             Search
           </button>
         </form>

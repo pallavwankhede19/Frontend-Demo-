@@ -15,7 +15,7 @@ interface ProductSpotlightProps {
   headingLevel?: "h1" | "h2";
 }
 
-/** Half-copy, half-photo split used for Portal One. */
+/** Full-bleed photo with the copy on a dark glass panel, used for Portal One. */
 export function ProductSpotlight({
   label,
   title,
@@ -30,7 +30,8 @@ export function ProductSpotlight({
 }: ProductSpotlightProps) {
   return (
     <section className="x-split" id={id} aria-labelledby={`${id}-title`}>
-      <div className="x-split__copy">
+      <Image src={image} alt={imageAlt} fill sizes="100vw" />
+      <div className="x-split__copy x-glass">
         <p className="x-label">{label}</p>
         <Heading id={`${id}-title`}>{title}</Heading>
         <p className="x-split__line">{line}</p>
@@ -52,9 +53,6 @@ export function ProductSpotlight({
             </Button>
           ) : null}
         </ButtonGroup>
-      </div>
-      <div className="x-split__media">
-        <Image src={image} alt={imageAlt} fill sizes="(max-width: 900px) 100vw, 50vw" />
       </div>
     </section>
   );
